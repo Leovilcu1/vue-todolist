@@ -1,31 +1,43 @@
 
-  const { createApp } = Vue
-
+  const { createApp } = Vue;
   createApp({
     data() {
       return {
-        newToDo:"",
+
+        newElement:"",
         list:[
-            "comprare latte",
-            "comprare pane",
-            "comprare acqua",
-            "comprare pasta",
+          {
+            text:"comprare latte1",
+            done:false
+          },  
+          {
+            text:"comprare latte2",
+            done:true
+          }, 
+          {
+            text:"comprare latte3",
+            done:false
+          }, 
+          {
+            text:"comprare latte4",
+            done:true
+          }, 
+            
         ]
       }
     },
     methods:{
-        removeToDo(item){
-            this.list.splice(item,1)
-        },
-        addToDo(){
-            if(this.newToDo != ""){
-                this.list.push(this.newToDo);
-            this.newToDo ="";
-            }
-            else{
 
-            }
-            
+      addElement(){
+        this.list.push({
+          text:this.newElement,
+          done:false
+        });
+        this.newElement ="";
+      },
+
+        removeElement(i){
+          this.list.splice(i,1)
         }
     }
   }).mount('#app')

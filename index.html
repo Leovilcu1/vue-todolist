@@ -17,18 +17,21 @@
             <img src="img/logo.png" alt="">
         </div>
         <div class="section">
-            <input v-model="newToDo" placeholder="aggiungi item ">
-            <button @click="addToDo" >invia</button>
+            <form action=""@submit.prevent="addElement()">
+                <input type="text" v-model="newElement" placeholder="aggiungi item ">
+                <button>invia</button>
+            </form>
         </div>
         <div class="sectiontwo">
             <div class="lista">
                 <div class="item">
                     <ul >
-                        <li v-for="(element,index) in list">
-                           {{element}}
-                            <span @click="removeToDo(index)"><i class= "fa-solid fa-xmark"></i></span>
+
+                        <li  v-for="(element,index) in list">
+                            <span :class="(element.done == true)? ('text-bar') : ''" >{{element.text}}</span>
+                            <i class="fa-solid fa-x" @click="removeElement(index)"></i>
                         </li>
-                       
+                        
                     </ul>
                 </div>
             </div>

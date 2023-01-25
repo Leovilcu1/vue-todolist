@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 .container{
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
     text-align: center;
-
 }
 .logo img{
     width: 300px;
@@ -15,7 +14,6 @@
 }
 .section{
     margin-bottom: 30px;
-    
 }
 ul li{
     display: flex;
@@ -26,9 +24,11 @@ ul li{
     font-size: 25px;
     font-weight: bold;
     padding: 20px;
-
 }
 ul li span{
     margin-right: 10px;
     cursor: pointer;
+}
+.text-bar{
+    text-decoration: line-through;
 }
