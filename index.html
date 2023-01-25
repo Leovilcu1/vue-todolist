@@ -28,7 +28,9 @@
                     <ul >
 
                         <li  v-for="(element,index) in list">
-                            <span :class="(element.done == true)? ('text-bar') : ''" >{{element.text}}</span>
+                            <span :class="(element.done == true)? ('text-bar') : ''" 
+                            @click="element.done = !element.done"  >{{element.text}}
+                            </span>
                             <i class="fa-solid fa-x" @click="removeElement(index)"></i>
                         </li>
                         

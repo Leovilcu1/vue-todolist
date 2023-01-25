@@ -29,11 +29,13 @@
     methods:{
 
       addElement(){
-        this.list.push({
-          text:this.newElement,
-          done:false
-        });
-        this.newElement ="";
+        if(this.newElement != ""){
+          this.list.push({
+            text:this.newElement,
+            done:false
+          });
+          this.newElement ="";
+        }
       },
 
         removeElement(i){
